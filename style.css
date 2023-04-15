@@ -7,4 +7,5 @@
   display: flex; /*정렬을 편하기 하기위해 기본적으로 가로 정렬!*/
   justify-content: center;
   align-items: center; /*컨텐츠를 정중앙에 오도록 설정!*/
+  flex-direction: column; /*컨텐츠를 세로로 설정!*/
 }
