@@ -33,7 +33,7 @@ li {
   border: 1px solid red;
   color: #fff;
   /* float: left; 옆으로 간다. */
-  background: url("http://placeimg.com/400/400/any"); /*400x400크기의 아무사진을 추가*/
+  background: url("http://placeimg.com/400/400/81"); /*400x400크기의 아무사진을 추가*/
 }
 
 .start-button {
@@ -50,4 +50,69 @@ li {
   color: #67c23a;
   text-shadow: 1px 1px rgba(0, 0, 0, 0.5); /*텍스트 그림자효과 가로, 세로 0.5는 투명도*/
   display: none; /*특정한 조건에서만 보이게 하기위해 안보이게 설정*/
+}
+
+.list0 {
+  background-position-x: 0px;
+  background-position-y: 0px;
+}
+.list1 {
+  background-position-x: -100px;
+  background-position-y: 0px;
+}
+.list2 {
+  background-position-x: -200px;
+  background-position-y: 0px;
+}
+.list3 {
+  background-position-x: -300px;
+  background-position-y: 0px;
+}
+.list4 {
+  background-position-x: 0px;
+  background-position-y: -100px;
+}
+.list5 {
+  background-position-x: -100px;
+  background-position-y: -100px;
+}
+.list6 {
+  background-position-x: -200px;
+  background-position-y: -100px;
+}
+.list7 {
+  background-position-x: -300px;
+  background-position-y: -100px;
+}
+.list8 {
+  background-position-x: 0px;
+  background-position-y: -200px;
+}
+.list9 {
+  background-position-x: -100px;
+  background-position-y: -200px;
+}
+.list10 {
+  background-position-x: -200px;
+  background-position-y: -200px;
+}
+.list11 {
+  background-position-x: -300px;
+  background-position-y: -200px;
+}
+.list12 {
+  background-position-x: 0px;
+  background-position-y: -300px;
+}
+.list13 {
+  background-position-x: -100px;
+  background-position-y: -300px;
+}
+.list14 {
+  background-position-x: -200px;
+  background-position-y: -300px;
+}
+.list15 {
+  background-position-x: -300px;
+  background-position-y: -300px;
 }
