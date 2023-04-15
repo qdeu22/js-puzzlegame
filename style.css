@@ -42,3 +42,11 @@ li {
   padding: 1rem 2rem;
   margin-top: 1rem;
 }
+
+.game-text {
+  position: absolute; /*문서 상의 요소에 영향 받지 않음*/
+  font-size: 45px;
+  color: #67c23a;
+  text-shadow: 1px 1px rgba(0, 0, 0, 0.5); /*텍스트 그림자효과 가로, 세로 0.5는 투명도*/
+  display: none; /*특정한 조건에서만 보이게 하기위해 안보이게 설정*/
+}
