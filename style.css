@@ -4,6 +4,7 @@
 }
 :root {
   --facebook: #3b5998;
+  --white: #fff;
 }
 
 .wrap-all {
@@ -32,4 +33,12 @@ li {
   border: 1px solid red;
   color: #fff;
   /* float: left; 옆으로 간다. */
+}
+
+.start-button {
+  background: var(--facebook);
+  color: var(--white);
+  border: none; /*테두리 지우기*/
+  padding: 1rem 2rem;
+  margin-top: 1rem;
 }
