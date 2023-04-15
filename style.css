@@ -33,6 +33,7 @@ li {
   border: 1px solid red;
   color: #fff;
   /* float: left; 옆으로 간다. */
+  background: url("http://placeimg.com/400/400/any"); /*400x400크기의 아무사진을 추가*/
 }
 
 .start-button {
