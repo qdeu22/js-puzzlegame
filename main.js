@@ -19,3 +19,13 @@ Array(tileCount)
     li.classList.add(`list${i}`); // HTML 요소의 클래스를 조작하는 코드
     container.appendChild(li); //새로운 HTML 요소를 문서에 추가하는 코드
   });
+
+function shuffle(array) {
+  let index = array.length - 1; //배열 마지막값
+  while (index > 0) {
+    const randomIndex = Math.floor(Math.random() * (index + 1)); //실수값을 내림하여 정수값으로 반환
+    [array[index], array[randomIndex]] = [array[randomIndex], array[index]]; //배열의 두 요소를 교환하는 방법, 배열 해체 할당 문법
+    index--;
+  }
+  return array;
+}
