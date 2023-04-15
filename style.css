@@ -9,3 +9,9 @@
   align-items: center; /*컨텐츠를 정중앙에 오도록 설정!*/
   flex-direction: column; /*컨텐츠를 세로로 설정!*/
 }
+
+.play-time {
+  font-size: 3rem;
+  margin-top: 2rem; /*(상단 여백)*/
+  color: #3b5998;
+}
