@@ -23,4 +23,13 @@ ul {
   margin-top: 1rem;
   list-style: none; /*항목 표시가 안됨*/
   border: 2px solid var(--facebook); /*테두리: 굵기 선스타일(실선) 파란색*/
+  display: grid; /*항상 일정한 비율..*/
+  grid-template-columns: repeat(4, 1fr); /*하나의 요소를 4번 반복 4x4*/
+}
+li {
+  width: 100px; /*너비*/
+  height: 100px; /*높음*/
+  border: 1px solid red;
+  color: #fff;
+  /* float: left; 옆으로 간다. */
 }
