@@ -53,17 +53,23 @@ function shuffle(array) {
 
 //events
 container.addEventListener("dragstart", (e) => {
-  dragged.el = e.target;
-  dragged.class = e.target.className;
-  dragged.index = [...e.target.parentNode.children].indexof(e.target); //e.target.parentNode.children은 원래 객체인데 indexof()을 사용할려면 배열이 필요 그러므로 배열로 강제 변환해야함
+  const obj = e.target;
+  dragged.el = obj;
+  dragged.class = obj.className;
+  dragged.index = [...obj.parentNode.children].indexOf(obj); //e.target.parentNode.children은 원래 객체인데 indexof()을 사용할려면 배열이 필요 그러므로 배열로 강제 변환해야함
 });
 
 container.addEventListener("dragover", (e) => {
   //어떤 위치에 올라왔을떄
   e.preventDefault(); // ????
-  console.log("over");
 });
 container.addEventListener("drop", (e) => {
   //드래그를 놓았을때
-  console.log("dropped");
+  const obj = e.target;
+  if (obj.className !== dragged.class) {
+    const droppedIndex = [...obj.parentNode.children].indexOf(obj);
+    dragged.index > droppedIndex
+      ? obj.before(dragged.el)
+      : obj.after(dragged.el);
+  }
 });
