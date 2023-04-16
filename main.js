@@ -16,8 +16,13 @@ let tiles = [];
 setGame();
 
 function setGame() {
+  container.innerHTML = ""; //컨테이너 초기화
   tiles = createImageTiles();
-  shuffle(tiles).forEach((tiles) => container.appendChild(tiles));
+  tiles.forEach((tiles) => container.appendChild(tiles)); //원본 그림
+  setTimeout(() => {
+    container.innerHTML = ""; //컨테이너 초기화
+    shuffle(tiles).forEach((tiles) => container.appendChild(tiles)); //무작위 그림
+  }, 2000); //2초뒤 실행
 }
 
 function createImageTiles() {
