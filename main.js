@@ -55,3 +55,13 @@ function shuffle(array) {
 container.addEventListener("dragstart", (e) => {
   console.log(e);
 });
+
+container.addEventListener("dragover", (e) => {
+  //어떤 위치에 올라왔을떄
+  e.preventDefault(); // ????
+  console.log("over");
+});
+container.addEventListener("drop", (e) => {
+  //드래그를 놓았을때
+  console.log("dropped");
+});
