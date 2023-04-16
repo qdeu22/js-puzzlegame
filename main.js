@@ -5,13 +5,13 @@ const playTime = document.querySelector(".play-time");
 
 const tileCount = 16;
 
-// for (var i = 0; i < 16; i++){
-
-// }
-
-//Array(tileCount).fill(); //16개 짜리 배열 값은 안들어 있음..
-
 let tiles = [];
+
+const dragged = {
+  el: null,
+  class: null,
+  index: null,
+};
 
 setGame();
 
@@ -53,7 +53,9 @@ function shuffle(array) {
 
 //events
 container.addEventListener("dragstart", (e) => {
-  console.log(e);
+  dragged.el = e.target;
+  dragged.class = e.target.className;
+  dragged.index = [...e.target.parentNode.children].indexof(e.target); //e.target.parentNode.children은 원래 객체인데 indexof()을 사용할려면 배열이 필요 그러므로 배열로 강제 변환해야함
 });
 
 container.addEventListener("dragover", (e) => {
