@@ -15,7 +15,7 @@ let tiles = [];
 
 tiles = createImageTiles();
 
-tiles.forEach((tiles) => container.appendChild(tiles));
+shuffle(tiles).forEach((tiles) => container.appendChild(tiles));
 
 function createImageTiles() {
   const tempArray = [];
