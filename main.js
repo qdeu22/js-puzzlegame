@@ -14,7 +14,9 @@ const tileCount = 16;
 let tiles = [];
 
 tiles = createImageTiles();
-console.log(tiles);
+
+tiles.forEach((tiles) => container.appendChild(tiles));
+
 function createImageTiles() {
   const tempArray = [];
   Array(tileCount)
@@ -23,7 +25,6 @@ function createImageTiles() {
       const li = document.createElement("li"); //새로운 HTML 요소를 생성하는 코드
       li.setAttribute("data-index", i); //HTML 요소의 속성 값을 설정하는 코드
       li.classList.add(`list${i}`); // HTML 요소의 클래스를 조작하는 코드
-      container.appendChild(li); //새로운 HTML 요소를 문서에 추가하는 코드
       tempArray.push(li);
     });
   return tempArray;
