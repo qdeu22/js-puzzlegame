@@ -13,6 +13,8 @@ const dragged = {
   index: null,
 };
 let isPlaying = false;
+let timeInterval = null; //타이머
+let time = 0;
 
 //functions
 
@@ -22,7 +24,7 @@ function checkStatus() {
     (child, index) => Number(child.getAttribute("data-index")) !== index
   );
   if (unMatchedList.length === 0) {
-    gameText.getElementsByClassName.display = "block"; //completed 보이게..
+    gameText.style.display = "block"; //completed 보이게..
     isPlaying = false;
   }
 }
@@ -30,6 +32,12 @@ function checkStatus() {
 function setGame() {
   isPlaying = true;
   container.innerHTML = ""; //컨테이너 초기화
+
+  timeInterval = setInterval(() => {
+    playTime.innerText = time;
+    time++;
+  }, 1000);
+
   tiles = createImageTiles();
   tiles.forEach((tiles) => container.appendChild(tiles)); //원본 그림
   setTimeout(() => {
