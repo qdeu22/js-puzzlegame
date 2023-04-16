@@ -33,7 +33,8 @@ li {
   border: 1px solid red;
   color: #fff;
   /* float: left; 옆으로 간다. */
-  background: url("http://placeimg.com/400/400/81"); /*400x400크기의 아무사진을 추가*/
+  background: url("https://upload.wikimedia.org/wikipedia/ko/a/a6/Pok%C3%A9mon_Pikachu_art.png"); /*400x400크기의 아무사진을 추가*/
+  background-size: 400px 400px;
 }
 
 .start-button {

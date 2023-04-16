@@ -66,10 +66,22 @@ container.addEventListener("dragover", (e) => {
 container.addEventListener("drop", (e) => {
   //드래그를 놓았을때
   const obj = e.target;
+
   if (obj.className !== dragged.class) {
+    let originPlace;
+    let isLast = false;
+
+    if (dragged.el.nextSibling) {
+      originPlace = dragged.el.nextSibling;
+    } else {
+      originPlace = dragged.el.previousSibling;
+      isLast = true;
+    }
+
     const droppedIndex = [...obj.parentNode.children].indexOf(obj);
     dragged.index > droppedIndex
       ? obj.before(dragged.el)
       : obj.after(dragged.el);
+    isLast ? originPlace.after(obj) : originPlace.before(obj);
   }
 });
