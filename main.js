@@ -13,9 +13,12 @@ const tileCount = 16;
 
 let tiles = [];
 
-tiles = createImageTiles();
+setGame();
 
-shuffle(tiles).forEach((tiles) => container.appendChild(tiles));
+function setGame() {
+  tiles = createImageTiles();
+  shuffle(tiles).forEach((tiles) => container.appendChild(tiles));
+}
 
 function createImageTiles() {
   const tempArray = [];
