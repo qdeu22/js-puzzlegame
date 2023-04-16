@@ -12,12 +12,23 @@ const dragged = {
   class: null,
   index: null,
 };
-
-setGame();
+let isPlaying = false;
 
 //functions
 
+function checkStatus() {
+  const currentList = [...container.children];
+  const unMatchedList = currentList.filter(
+    (child, index) => Number(child.getAttribute("data-index")) !== index
+  );
+  if (unMatchedList.length === 0) {
+    gameText.getElementsByClassName.display = "block"; //completed 보이게..
+    isPlaying = false;
+  }
+}
+
 function setGame() {
+  isPlaying = true;
   container.innerHTML = ""; //컨테이너 초기화
   tiles = createImageTiles();
   tiles.forEach((tiles) => container.appendChild(tiles)); //원본 그림
@@ -50,17 +61,9 @@ function shuffle(array) {
   }
   return array;
 }
-
-function checkStatus() {
-  const currentList = [...container.children];
-  const unMatchedList = currentList.filter(
-    (child, index) => Number(child.getAttribute("data-index")) !== index
-  );
-  console.log(unMatchedList);
-}
-
 //events
 container.addEventListener("dragstart", (e) => {
+  if (!isPlaying) return;
   const obj = e.target;
   dragged.el = obj;
   dragged.class = obj.className;
@@ -72,6 +75,7 @@ container.addEventListener("dragover", (e) => {
   e.preventDefault(); // ????
 });
 container.addEventListener("drop", (e) => {
+  if (!isPlaying) return;
   //드래그를 놓았을때
   const obj = e.target;
 
@@ -93,4 +97,8 @@ container.addEventListener("drop", (e) => {
     isLast ? originPlace.after(obj) : originPlace.before(obj);
   }
   checkStatus();
+});
+
+startButton.addEventListener("click", () => {
+  setGame();
 });
