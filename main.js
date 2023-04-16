@@ -26,13 +26,16 @@ function checkStatus() {
   if (unMatchedList.length === 0) {
     gameText.style.display = "block"; //completed 보이게..
     isPlaying = false;
+    clearInterval(timeInterval);
   }
 }
 
 function setGame() {
   isPlaying = true;
+  time = 0;
   container.innerHTML = ""; //컨테이너 초기화
-
+  gameText.style.display = "none";
+  clearInterval(timeInterval);
   timeInterval = setInterval(() => {
     playTime.innerText = time;
     time++;
@@ -43,7 +46,7 @@ function setGame() {
   setTimeout(() => {
     container.innerHTML = ""; //컨테이너 초기화
     shuffle(tiles).forEach((tiles) => container.appendChild(tiles)); //무작위 그림
-  }, 2000); //2초뒤 실행
+  }, 5000); //5초뒤 실행
 }
 
 function createImageTiles() {
