@@ -51,6 +51,14 @@ function shuffle(array) {
   return array;
 }
 
+function checkStatus() {
+  const currentList = [...container.children];
+  const unMatchedList = currentList.filter(
+    (child, index) => Number(child.getAttribute("data-index")) !== index
+  );
+  console.log(unMatchedList);
+}
+
 //events
 container.addEventListener("dragstart", (e) => {
   const obj = e.target;
@@ -84,4 +92,5 @@ container.addEventListener("drop", (e) => {
       : obj.after(dragged.el);
     isLast ? originPlace.after(obj) : originPlace.before(obj);
   }
+  checkStatus();
 });
