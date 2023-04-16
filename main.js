@@ -15,6 +15,8 @@ let tiles = [];
 
 setGame();
 
+//functions
+
 function setGame() {
   container.innerHTML = ""; //컨테이너 초기화
   tiles = createImageTiles();
@@ -47,3 +49,8 @@ function shuffle(array) {
   }
   return array;
 }
+
+//events
+container.addEventListener("dragstart", (e) => {
+  console.log(e);
+});
